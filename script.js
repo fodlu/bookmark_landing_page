@@ -4,6 +4,10 @@ const arrows = document.querySelectorAll(".arrow");
 const operation = document.querySelector(".operation");
 const tags = document.querySelectorAll(".tags");
 const slide = document.querySelectorAll(".slider .slide");
+const ham = document.querySelector(".ham");
+const close = document.querySelector(".close");
+const overlay = document.querySelector(".overlay");
+const links = overlay.querySelectorAll("a");
 
 quest.forEach((q) => {
   const answer = q.querySelector(".answer");
@@ -31,5 +35,20 @@ tags.forEach((t) => {
 
     slide.forEach((s) => s.classList.remove("active"));
     slide[count - 1].classList.add("active");
+  });
+});
+
+ham.addEventListener("click", () => {
+  overlay.classList.remove("hidden");
+});
+
+close.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+    console.log(link.textContent);
   });
 });
