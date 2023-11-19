@@ -1,0 +1,749 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: rubik_light;
+  font-size: 18px;
+}
+
+.ham {
+  display: none;
+}
+
+@font-face {
+  font-family: rubik_light;
+  src: url("fonts/Rubik-Light.ttf");
+}
+
+@font-face {
+  font-family: rubik_medium;
+  src: url("fonts/Rubik-Medium.ttf");
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  margin-bottom: 2rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+header nav a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: rubik_medium;
+  color: hsl(229, 8%, 60%);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+header nav a:hover {
+  color: hsl(0, 94%, 66%);
+}
+
+.login {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  background-color: hsl(0, 94%, 66%);
+  color: white;
+  border: 1px solid hsl(0, 94%, 66%);
+}
+
+.login:hover {
+  background-color: white;
+  border: 1px solid hsl(0, 94%, 66%);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  margin-bottom: 3rem;
+}
+
+.hero .head {
+  font-family: rubik_medium;
+  font-size: 2.5rem;
+  color: hsl(229, 31%, 21%);
+  margin-bottom: 1rem;
+}
+
+.hero .body {
+  color: hsl(229, 8%, 60%);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.hero .get {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero .get button {
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  font-family: rubik_medium;
+  cursor: pointer;
+}
+
+.chrome {
+  border: 2px solid hsl(231, 69%, 60%);
+
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+
+.chrome:hover {
+  background-color: white;
+  color: hsl(231, 69%, 60%);
+  border: 2px solid hsl(231, 69%, 60%);
+}
+
+.firefox {
+  border: 2px solid whites;
+  background-color: white;
+  color: hsl(229, 31%, 21%);
+  box-shadow: 0px 3px 2px hsl(229, 8%, 60%);
+  transition: border 0.4s ease;
+}
+
+.firefox:hover {
+  border: 2px solid hsl(229, 31%, 21%);
+}
+
+.hero .image {
+  position: relative;
+}
+
+.hero .image .bckg,
+.feats .operation .slider .slide .bckg {
+  position: absolute;
+  background-color: hsl(231, 69%, 60%);
+  height: 300px;
+  width: 70%;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-bottom-left-radius: 180px;
+}
+
+.feats {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.feats .feat {
+  font-family: rubik_medium;
+  color: hsl(229, 31%, 21%);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.feats .body,
+.download .body {
+  width: 40%;
+  text-align: center;
+  color: hsl(229, 8%, 60%);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.operation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.operation .tag {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 2px solid hsl(229, 8%, 60%);
+  margin-bottom: 1rem;
+}
+
+.operation .tag a {
+  text-decoration: none;
+  color: hsl(229, 8%, 60%);
+  font-family: rubik_medium;
+  position: relative;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+
+.operation .tag a:hover {
+  color: hsl(0, 94%, 66%);
+}
+
+.operation .tag .active {
+  color: hsl(229, 31%, 21%);
+}
+
+.operation .tag .active::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid hsl(0, 94%, 66%);
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+}
+
+.slider {
+  padding: 2rem 1rem;
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slider .slide {
+  position: absolute;
+  transform: translateX(0%);
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  background-color: white;
+  display: none;
+}
+
+.slider .active {
+  display: flex;
+}
+
+.slider .slide .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.slider .slide .text .head,
+.download .head,
+.faq .head {
+  font-family: rubik_medium;
+  color: hsl(229, 31%, 21%);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.slider .slide .text .body {
+  color: hsl(229, 8%, 60%);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.feats .operation .slider .slide .bckg {
+  bottom: -31px;
+  left: -268px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 180px;
+}
+
+.more,
+.download .add > div button {
+  padding: 0.5rem 1rem;
+  font-family: rubik_medium;
+  background-color: hsl(231, 69%, 60%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px hsl(229, 8%, 60%);
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.download > .head {
+  font-family: rubik_medium;
+  color: hsl(229, 31%, 21%);
+}
+
+.download > .body,
+.faq .body {
+  color: hsl(229, 8%, 60%);
+  width: 30%;
+  text-align: center;
+}
+
+.download .add {
+  display: flex;
+  gap: 2rem;
+  padding: 0.5rem;
+}
+
+.download .add > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px hsl(229, 8%, 60%);
+  width: 230px;
+  height: 300px;
+}
+
+.download .add > div:nth-child(2) {
+  margin-top: 1.5rem;
+}
+
+.download .add > div:nth-child(3) {
+  margin-top: 3rem;
+}
+
+.download .add > div .body {
+  width: 100%;
+}
+
+.download .add > div button {
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: 2px solid hsl(231, 69%, 60%);
+  transition: all 0.4s ease;
+}
+
+.download .add > div button:hover {
+  background-color: white;
+  color: hsl(231, 69%, 60%);
+}
+
+.faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.faq .body {
+  width: 38%;
+}
+
+.questions {
+  width: 50%;
+  margin: 2rem 0;
+}
+
+.questions .quest {
+  border-top: 1px solid hsl(229, 8%, 60%);
+}
+
+.questions .quest:last-child {
+  border-bottom: 1px solid hsl(229, 8%, 60%);
+}
+
+.questions .quest .question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.questions .quest .question:hover p {
+  color: hsl(0, 94%, 66%);
+}
+
+.questions .quest .question p {
+  font-family: rubik_medium;
+  color: hsl(229, 31%, 21%);
+  transition: color 0.4s ease;
+}
+
+.questions .quest .answer {
+  display: none;
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+  line-height: 2;
+  font-family: rubik_medium;
+  color: hsl(229, 8%, 60%);
+  transition: all 0.4s ease;
+}
+
+.questions .quest .active {
+  display: block;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(231, 69%, 60%);
+  padding: 2rem;
+  color: white;
+}
+
+.contact .count {
+  font-size: 0.7rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-family: rubik_medium;
+}
+
+.contact .stay {
+  font-size: 1.7rem;
+  font-family: rubik_medium;
+  width: 35%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 35%;
+}
+
+.contact form .text {
+  width: 100%;
+  font-family: rubik_medium;
+  color: hsl(229, 31%, 21%);
+  border: 2px solid white;
+}
+
+.contact form .text,
+.contact form .submit {
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  box-shadow: 0px 0px 4px hsl(229, 8%, 60%);
+}
+
+.contact form .text:hover,
+.contact form .text:focus {
+  border: 2px solid hsl(0, 94%, 66%);
+}
+
+.contact form .submit {
+  padding: 0.75rem 1.25rem;
+  color: white;
+  font-family: rubik_medium;
+  background-color: hsl(0, 94%, 66%);
+  cursor: pointer;
+  border: 2px solid hsl(0, 94%, 66%);
+  transition: all 0.4s ease;
+}
+
+.contact form .submit:hover {
+  background-color: white;
+  color: hsl(0, 94%, 66%);
+}
+
+.footer {
+  background-color: hsl(229, 31%, 21%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+.footer nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer nav svg path {
+  fill: white;
+}
+
+.footer nav .navItem {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer nav .navItem a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  transition: color 0.4s ease;
+  letter-spacing: 0.125rem;
+}
+
+.footer nav .navItem a:hover {
+  color: hsl(0, 94%, 66%);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social svg path {
+  transition: fill 0.4s ease;
+  cursor: pointer;
+}
+
+.social svg path:hover {
+  fill: hsl(0, 94%, 66%);
+}
+
+@media only screen and (max-width: 375px) {
+  main {
+    width: 100%;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .ham {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+
+  .hero .text {
+    margin-top: 3rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero .head {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .hero .body {
+    width: 80%;
+    font-size: 0.75rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .hero .get button {
+    font-size: 0.7rem;
+    font-family: rubik_medium;
+  }
+
+  .hero .image {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero .image img {
+    width: 100%;
+  }
+
+  .hero .image .bckg,
+  .feats .operation .slider .slide .bckg {
+    height: 210px;
+    width: 80%;
+  }
+
+  .feats {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .feats .body,
+  .download .body {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .operation {
+    width: 100%;
+  }
+
+  .operation .tag {
+    flex-direction: column;
+    margin-bottom: 0;
+    width: 100%;
+    border-bottom: none;
+  }
+
+  .operation .tag a {
+    text-decoration: none;
+    padding: 0 1rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid hsla(229, 8%, 60%, 0.3);
+    text-align: center;
+  }
+
+  .operation .tag a:last-child {
+    border-bottom: 2px solid hsla(229, 8%, 60%, 0.3);
+  }
+
+  .operation .tag .active {
+    color: hsl(229, 31%, 21%);
+  }
+
+  .operation .tag .active::after {
+    width: 50%;
+    height: 100%;
+    margin-top: 0;
+    top: -5px;
+    left: 25%;
+    z-index: 2;
+    border-bottom: 5px solid hsl(0, 94%, 66%);
+  }
+
+  .slider {
+    padding: 2rem 1rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 200px;
+  }
+
+  .slider .slide {
+    flex-direction: column;
+  }
+
+  .slider .slide .image {
+    width: 100%;
+  }
+
+  .slider .slide .image img {
+    width: 100%;
+  }
+
+  .slider .slide .text {
+    display: flex;
+    align-items: center;
+  }
+
+  .slider .slide .text .body {
+    text-align: center;
+  }
+
+  .feats .operation .slider .slide .bckg {
+    bottom: 300px;
+    left: -60px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 180px;
+    width: 110%;
+  }
+
+  .download {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .download .add {
+    flex-direction: column;
+  }
+
+  .download .add > div {
+    box-shadow: 0px 5px 9px hsl(229, 8%, 60%);
+    justify-content: center;
+  }
+
+  .download .add > div .head {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  .faq {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .faq .head {
+    text-align: center;
+  }
+
+  .faq .body {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .questions {
+    width: 100%;
+  }
+
+  .questions .quest {
+    border-top: none;
+    border-bottom: 1px solid hsl(229, 8%, 60%);
+  }
+
+  .questions .quest:last-child {
+    border-bottom: 1px solid hsl(229, 8%, 60%);
+  }
+
+  .questions .quest .question p {
+    font-size: 0.75rem;
+  }
+
+  .contact {
+    padding: 2rem;
+  }
+
+  .contact .stay {
+    font-size: 1.25rem;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  .contact form {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact form .text {
+    font-family: rubik_medium;
+    color: hsl(229, 31%, 21%);
+    border: 2px solid white;
+  }
+
+  .contact form .text,
+  .contact form .submit {
+    width: 100%;
+  }
+
+  .footer,
+  .footer nav,
+  .footer nav .navItem {
+    flex-direction: column;
+  }
+
+  .footer nav .navItem {
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+}
